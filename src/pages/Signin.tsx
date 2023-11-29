@@ -1,11 +1,6 @@
-import Form from "@/components/signup/Form"
-
 function SigninPage() {
-  return (
-    <div>
-      <Form />
-    </div>
-  )
+
+  return;
 }
 
 export default SigninPage
