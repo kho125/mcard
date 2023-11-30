@@ -12,10 +12,12 @@ function ApplyDone() {
   return (
     <Flex>
       <Text>
-        {success === 'true' 
-        ? '카드가 발급되었습니다.'
-        : '카드 발급에 실패했습니다.'}
-        </Text>
+        {
+          success === 'true' 
+          ? '카드가 발급되었습니다.'
+          : '카드 발급에 실패했습니다.'
+        }
+      </Text>
 
         <FixedBottomButton 
           label='확인' 

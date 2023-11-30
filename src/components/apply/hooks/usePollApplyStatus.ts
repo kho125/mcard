@@ -30,10 +30,10 @@ function usePollApplyStatus({
 
 function getApplyStatus() {
   const values = [
-    // APPLY_STATUS.REDAY, // 실패한 것만 보고싶다면 주석
-    // APPLY_STATUS.PROGRESS, // 실패한 것만 보고싶다면 주석
-    // APPLY_STATUS.COMPLETE, // 실패한 것만 보고싶다면 주석
-    APPLY_STATUS.REJECT
+    APPLY_STATUS.REDAY, // 실패한 것만 보고싶다면 주석
+    APPLY_STATUS.PROGRESS, // 실패한 것만 보고싶다면 주석
+    APPLY_STATUS.COMPLETE, // 실패한 것만 보고싶다면 주석
+    APPLY_STATUS.REJECT // 위 3개를 주석처리 하면 실패만 나타남
   ]
 
   const status = values[Math.floor(Math.random() * values.length)]

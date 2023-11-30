@@ -47,7 +47,7 @@ function ApplyPage() {
   const { mutate, isLoading: 카드를신청중인가 } = useApplyCardMutation({
     onSuccess: () => {
       setReadyToPoll(true)
-      console.log("카드추가 완료!!")
+      console.log("카드추가!!")
       // 값이 추가되었을 때 => 폴링시작
     },
     onError: () => {
