@@ -9,6 +9,7 @@ import Flex from '../shared/Flex'
 import Spacing from '../shared/Spacing'
 import Text from '../shared/Text'
 import TextField from '../shared/TextField'
+import { ChangeEvent } from 'react'
 
 function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
   const [formValues, setFormValues] = useState({
@@ -16,7 +17,7 @@ function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
     password: ''
   })
 
-  const handleFormValues = useCallback((e: any) => {
+  const handleFormValues = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setFormValues((prevFormValues) => ({
       ...prevFormValues,
       [e.target.name]: e.target.value
