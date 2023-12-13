@@ -17,6 +17,7 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
         uid: user.uid,
         email: user.email ?? '',
         displayName: user.displayName ?? '',
+        phothURL: user.photoURL ?? '',
       })
     } else {
       setUser(null)

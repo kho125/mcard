@@ -1,6 +1,5 @@
 import { css } from '@emotion/react'
 import { Link, useLocation } from 'react-router-dom'
-import { useRecoilValue } from 'recoil'
 
 import { useCallback } from 'react'
 
@@ -8,9 +7,7 @@ import { colors } from '@styles/colorPalette'
 import Flex from '@shared/Flex'
 import Button from '@shared/Button'
 import useUser from '@hooks/auth/useUser'
-import { signOut } from 'firebase/auth'
-import { auth } from '@/remote/firebase'
-// import MyImage from '@components/my/MyImage'
+import MyImage from '@components/my/MyImage'
 
 function Navbar() {
   const location = useLocation()
@@ -19,13 +16,13 @@ function Navbar() {
 
     const user = useUser()
 
-    const handleLogout = useCallback(() => {
-      signOut(auth)
-    }, [signOut])
-
     const renderButton = useCallback(() => {
       if (user != null) {
-        return <Button onClick={handleLogout}>로그아웃</Button>
+        return (
+          <Link to="/my">
+            <MyImage size={40} />
+          </Link>
+        )
       }
       if (showSignButton) {
         return (
@@ -36,7 +33,7 @@ function Navbar() {
       }
 
       return null
-    }, [user, showSignButton, handleLogout])
+    }, [user, showSignButton])
 
     console.log('user', user)
 
